@@ -10,6 +10,9 @@
       <FileRef
          location = "group:README.md">
       </FileRef>
+      <FileRef
+         location = "group:Gemfile">
+      </FileRef>
    </Group>
    <FileRef
       location = "container:EnterpriseProjectSample.xcodeproj">
