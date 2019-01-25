@@ -20,6 +20,9 @@
          location = "group:Podfile"
          assignedFileDataType = "public.ruby-script">
       </FileRef>
+      <FileRef
+         location = "group:Cartfile">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:EnterpriseProjectSample.xcodeproj">
