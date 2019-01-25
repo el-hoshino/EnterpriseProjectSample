@@ -19,6 +19,9 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "container:EnterpriseProjectSample.xcodeproj">
+      location = "group:EnterpriseProjectSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
