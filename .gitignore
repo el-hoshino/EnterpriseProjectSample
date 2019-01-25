@@ -69,3 +69,10 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Auto Generated Files
+#
+# Files generated automatically on build which should be ignored by VCS
+
+## R.swift
+R.generated.swift
