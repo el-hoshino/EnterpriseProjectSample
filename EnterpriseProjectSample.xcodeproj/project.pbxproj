@@ -207,6 +207,7 @@
 			buildConfigurationList = BFE43CBE21F8824B00507C86 /* Build configuration list for PBXNativeTarget "EnterpriseProjectSample" */;
 			buildPhases = (
 				D6C9E36DD190A467E84F103F /* [CP] Check Pods Manifest.lock */,
+				BFE43D4821FAE4BE00507C86 /* Run Swiftlint */,
 				BFE43D3E21FADE8600507C86 /* Run R.swift */,
 				BFE43D4521FAE2BE00507C86 /* Run DIKitGen */,
 				BFE43C9221F8824300507C86 /* Sources */,
@@ -478,6 +479,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "which dikitgen >/dev/null || mint install ishkawa/dikit \ndikitgen ${SRCROOT}/EnterpriseProjectSample > ${SRCROOT}/EnterpriseProjectSample/AppResolver.generated.swift\n";
+		};
+		BFE43D4821FAE4BE00507C86 /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "which swiftlint >/dev/null || brew install swiftlint\nswiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
