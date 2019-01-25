@@ -17,6 +17,7 @@
 		BFE43CBA21F8824B00507C86 /* EnterpriseProjectSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE43CB921F8824B00507C86 /* EnterpriseProjectSampleUITests.swift */; };
 		BFE43D4021FADFAC00507C86 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE43D3F21FADFAC00507C86 /* R.generated.swift */; };
 		BFE43D4221FAE0D400507C86 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE43D4121FAE0D300507C86 /* DIKit.framework */; };
+		BFE43D4721FAE34A00507C86 /* AppResolver.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE43D4621FAE34900507C86 /* AppResolver.generated.swift */; };
 		D51FA12DC9FA3D4AA31793A0 /* Pods_EnterpriseProjectSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831014B8C382CC2D3C14B80B /* Pods_EnterpriseProjectSampleTests.framework */; };
 		E1F4F983EBA74564C337A8C1 /* Pods_EnterpriseProjectSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55908E5474A613A05B2079 /* Pods_EnterpriseProjectSample.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		BFE43CBB21F8824B00507C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFE43D3F21FADFAC00507C86 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BFE43D4121FAE0D300507C86 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
+		BFE43D4621FAE34900507C86 /* AppResolver.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppResolver.generated.swift; sourceTree = "<group>"; };
 		C3828DCEB4EDF543CD65CD21 /* Pods-EnterpriseProjectSampleUITests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterpriseProjectSampleUITests.release-production.xcconfig"; path = "Pods/Target Support Files/Pods-EnterpriseProjectSampleUITests/Pods-EnterpriseProjectSampleUITests.release-production.xcconfig"; sourceTree = "<group>"; };
 		DCE0B499A1F5CEDA267F1CEA /* Pods-EnterpriseProjectSample.release-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterpriseProjectSample.release-staging.xcconfig"; path = "Pods/Target Support Files/Pods-EnterpriseProjectSample/Pods-EnterpriseProjectSample.release-staging.xcconfig"; sourceTree = "<group>"; };
 		E8F0B649B5132CFAD03C7EAE /* Pods-EnterpriseProjectSample.debug-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterpriseProjectSample.debug-staging.xcconfig"; path = "Pods/Target Support Files/Pods-EnterpriseProjectSample/Pods-EnterpriseProjectSample.debug-staging.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE43D3F21FADFAC00507C86 /* R.generated.swift */,
+				BFE43D4621FAE34900507C86 /* AppResolver.generated.swift */,
 				BFE43C9921F8824300507C86 /* AppDelegate.swift */,
 				BFE43C9B21F8824300507C86 /* ViewController.swift */,
 				BFE43C9D21F8824300507C86 /* Main.storyboard */,
@@ -205,6 +208,7 @@
 			buildPhases = (
 				D6C9E36DD190A467E84F103F /* [CP] Check Pods Manifest.lock */,
 				BFE43D3E21FADE8600507C86 /* Run R.swift */,
+				BFE43D4521FAE2BE00507C86 /* Run DIKitGen */,
 				BFE43C9221F8824300507C86 /* Sources */,
 				BFE43C9321F8824300507C86 /* Frameworks */,
 				BFE43C9421F8824300507C86 /* Resources */,
@@ -456,6 +460,25 @@
 			shellPath = /bin/sh;
 			shellScript = "carthage copy-frameworks\n";
 		};
+		BFE43D4521FAE2BE00507C86 /* Run DIKitGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run DIKitGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${SRCROOT}/EnterpriseProjectSample/AppResolver.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "which dikitgen >/dev/null || mint install ishkawa/dikit \ndikitgen ${SRCROOT}/EnterpriseProjectSample > ${SRCROOT}/EnterpriseProjectSample/AppResolver.generated.swift\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -465,6 +488,7 @@
 			files = (
 				BFE43C9C21F8824300507C86 /* ViewController.swift in Sources */,
 				BFE43C9A21F8824300507C86 /* AppDelegate.swift in Sources */,
+				BFE43D4721FAE34A00507C86 /* AppResolver.generated.swift in Sources */,
 				BFE43D4021FADFAC00507C86 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
