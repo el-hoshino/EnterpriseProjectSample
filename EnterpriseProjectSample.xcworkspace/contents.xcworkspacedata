@@ -11,6 +11,9 @@
          location = "group:README.md">
       </FileRef>
       <FileRef
+         location = "group:bootstrap.sh">
+      </FileRef>
+      <FileRef
          location = "group:Gemfile">
       </FileRef>
       <FileRef
