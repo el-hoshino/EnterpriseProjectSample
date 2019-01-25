@@ -17,6 +17,9 @@
          location = "group:Brewfile">
       </FileRef>
       <FileRef
+         location = "group:Mintfile">
+      </FileRef>
+      <FileRef
          location = "group:Podfile"
          assignedFileDataType = "public.ruby-script">
       </FileRef>
