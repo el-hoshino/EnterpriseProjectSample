@@ -16,6 +16,7 @@
 		BFE43CAF21F8824B00507C86 /* EnterpriseProjectSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE43CAE21F8824B00507C86 /* EnterpriseProjectSampleTests.swift */; };
 		BFE43CBA21F8824B00507C86 /* EnterpriseProjectSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE43CB921F8824B00507C86 /* EnterpriseProjectSampleUITests.swift */; };
 		BFE43D4021FADFAC00507C86 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE43D3F21FADFAC00507C86 /* R.generated.swift */; };
+		BFE43D4221FAE0D400507C86 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE43D4121FAE0D300507C86 /* DIKit.framework */; };
 		D51FA12DC9FA3D4AA31793A0 /* Pods_EnterpriseProjectSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831014B8C382CC2D3C14B80B /* Pods_EnterpriseProjectSampleTests.framework */; };
 		E1F4F983EBA74564C337A8C1 /* Pods_EnterpriseProjectSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D55908E5474A613A05B2079 /* Pods_EnterpriseProjectSample.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		BFE43CB921F8824B00507C86 /* EnterpriseProjectSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseProjectSampleUITests.swift; sourceTree = "<group>"; };
 		BFE43CBB21F8824B00507C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFE43D3F21FADFAC00507C86 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		BFE43D4121FAE0D300507C86 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
 		C3828DCEB4EDF543CD65CD21 /* Pods-EnterpriseProjectSampleUITests.release-production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterpriseProjectSampleUITests.release-production.xcconfig"; path = "Pods/Target Support Files/Pods-EnterpriseProjectSampleUITests/Pods-EnterpriseProjectSampleUITests.release-production.xcconfig"; sourceTree = "<group>"; };
 		DCE0B499A1F5CEDA267F1CEA /* Pods-EnterpriseProjectSample.release-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterpriseProjectSample.release-staging.xcconfig"; path = "Pods/Target Support Files/Pods-EnterpriseProjectSample/Pods-EnterpriseProjectSample.release-staging.xcconfig"; sourceTree = "<group>"; };
 		E8F0B649B5132CFAD03C7EAE /* Pods-EnterpriseProjectSample.debug-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterpriseProjectSample.debug-staging.xcconfig"; path = "Pods/Target Support Files/Pods-EnterpriseProjectSample/Pods-EnterpriseProjectSample.debug-staging.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE43D4221FAE0D400507C86 /* DIKit.framework in Frameworks */,
 				E1F4F983EBA74564C337A8C1 /* Pods_EnterpriseProjectSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +109,7 @@
 		0C42A7D7CDD219F79C3E8377 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFE43D4121FAE0D300507C86 /* DIKit.framework */,
 				7D55908E5474A613A05B2079 /* Pods_EnterpriseProjectSample.framework */,
 				831014B8C382CC2D3C14B80B /* Pods_EnterpriseProjectSampleTests.framework */,
 				26553A815EBF871C02DECC74 /* Pods_EnterpriseProjectSampleUITests.framework */,
@@ -204,6 +208,7 @@
 				BFE43C9221F8824300507C86 /* Sources */,
 				BFE43C9321F8824300507C86 /* Frameworks */,
 				BFE43C9421F8824300507C86 /* Resources */,
+				BFE43D4321FAE0FE00507C86 /* Copy Frameworks via Carthage */,
 				289E740280BF81CC1524E646 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -432,6 +437,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/EnterpriseProjectSample/R.generated.swift\"\n";
 		};
+		BFE43D4321FAE0FE00507C86 /* Copy Frameworks via Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DIKit.framework",
+			);
+			name = "Copy Frameworks via Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -620,6 +644,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KC8N9BMQJY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EnterpriseProjectSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -639,6 +667,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KC8N9BMQJY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EnterpriseProjectSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
